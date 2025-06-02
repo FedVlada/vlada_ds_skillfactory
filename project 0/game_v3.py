@@ -58,5 +58,3 @@ def score_game(my_predict) -> int:
 # RUN
 if __name__ == "__main__":
     score_game(my_predict)
-
-    
