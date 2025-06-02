@@ -16,6 +16,7 @@ def my_predict(number: int = 1) -> int:
     """
     count = 0
     predict_number = np.random.randint(1, 101)  # предполагаемое число
+    # ограничиваем поиск числа мин и макс числами
     min_num = 1
     max_num = 100
 
@@ -26,10 +27,10 @@ def my_predict(number: int = 1) -> int:
         if number == predict_number:
             break  # выход из цикла если угадали
         elif predict_number < number :
-            max_num = number - 1
+            max_num = number - 1 # верхний предел для поиска числа
            
         elif number < predict_number:
-            min_num = number + 1
+            min_num = number + 1 # нижний предел для поиска числа
             
     return count
 
@@ -54,6 +55,8 @@ def score_game(my_predict) -> int:
     print(f"Ваш алгоритм угадывает число в среднем за:{score} попыток")
     return score
 
-# if __name__ == "__main__":
-    # RUN
-score_game(my_predict)
+# RUN
+if __name__ == "__main__":
+    score_game(my_predict)
+
+    
